@@ -1,0 +1,31 @@
+"job_title_short","job_location","count_per_location","salary_avg","salaryavgavg"
+"Data Engineer","Worcester, MA","2",177750,145494
+"Data Engineer","Boston, MA","57",141942,145494
+"Data Engineer","Waltham, MA","5",132600,145494
+"Data Engineer","Cambridge, MA","6",129683,145494
+"Senior Data Engineer","Worcester, MA","2",159250,143037
+"Senior Data Engineer","Cambridge, MA","7",155253,143037
+"Senior Data Engineer","Boston, MA","18",150681,143037
+"Senior Data Engineer","Waltham, MA","1",135000,143037
+"Senior Data Engineer","Lexington, MA","2",115000,143037
+"Data Scientist","Somerville, MA","3",160667,137834
+"Data Scientist","Boston, MA","55",146103,137834
+"Data Scientist","Waltham, MA","7",139500,137834
+"Data Scientist","Cambridge, MA","14",132236,137834
+"Data Scientist","Worcester, MA","1",125000,137834
+"Data Scientist","Lexington, MA","2",123500,137834
+"Senior Data Scientist","Boston, MA","20",145008,135693
+"Senior Data Scientist","Cambridge, MA","5",138000,135693
+"Senior Data Scientist","Lexington, MA","2",136513,135693
+"Senior Data Scientist","Waltham, MA","2",123250,135693
+"Software Engineer","Lexington, MA","1",149653,117743
+"Software Engineer","Boston, MA","3",85833,117743
+"Data Analyst","Lexington, MA","1",125000,104140
+"Data Analyst","Waltham, MA","5",117500,104140
+"Data Analyst","Watertown, MA","1",105000,104140
+"Data Analyst","Boston, MA","55",101529,104140
+"Data Analyst","Cambridge, MA","7",93382,104140
+"Data Analyst","Worcester, MA","6",82427,104140
+"Business Analyst","Boston, MA","4",97477,97477
+"Senior Data Analyst","Boston, MA","13",103390,93592
+"Senior Data Analyst","Waltham, MA","10",83794,93592

@@ -18,25 +18,33 @@ Possible Errors:
             1. Find path by right-clicking a CSV file in VS Code and selecting “Copy Path”
 7. Paste the following into `PSQL Tool`, (with the CORRECT file path)
 
-\copy company_dim FROM '/Users/teddyrashkover/Documents/SQL_project/csv_files/company_dim.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+\copy company_dim FROM '/Users/teddyrashkover/Documents/SQL_project/csv_files_init/company_dim.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
-\copy skills_dim FROM '/Users/teddyrashkover/Documents/SQL_project/csv_files/skills_dim.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+\copy skills_dim FROM '/Users/teddyrashkover/Documents/SQL_project/csv_files_init/skills_dim.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
-\copy job_postings_fact FROM '/Users/teddyrashkover/Documents/SQL_project/csv_files/job_postings_fact.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+\copy job_postings_fact FROM '/Users/teddyrashkover/Documents/SQL_project/csv_files_init/job_postings_fact.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
-\copy skills_job_dim FROM '/Users/teddyrashkover/Documents/SQL_project/csv_files/skills_job_dim.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+\copy skills_job_dim FROM '/Users/teddyrashkover/Documents/SQL_project/csv_files_init/skills_job_dim.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
 */
 
 -- NOTE: This has been updated from the video to fix issues with encoding
 COPY company_dim
-FROM '/Users/teddyrashkover/Documents/SQL_project/csv_files/company_dim.csv'
+FROM '/Users/teddyrashkover/Documents/SQL_project/csv_files_init/company_dim.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
 COPY job_postings_fact
-FROM 'C:\Program Files\PostgreSQL\16\data\Datasets\sql_course\job_postings_fact.csv'
+FROM '/Users/teddyrashkover/Documents/SQL_project/csv_files_init/job_postings_fact.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
 COPY skills_job_dim
-FROM 'C:\Program Files\PostgreSQL\16\data\Datasets\sql_course\skills_job_dim.csv'
+FROM '/Users/teddyrashkover/Documents/SQL_project/csv_files_init/skills_job_dim.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+
+COPY skills_dim
+FROM '/Users/teddyrashkover/Documents/SQL_project/csv_files_init/skills_dim.csv'
+WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+
+
+
+
