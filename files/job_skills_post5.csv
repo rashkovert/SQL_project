@@ -1,103 +1,103 @@
-skills,job_title_short,count,avg_salary,Groupings_manual,manual_names
-kafka,Data Analyst,40,129999,3,Niche or weakly valued
-pytorch,Data Analyst,20,125226,0,none
-perl,Data Analyst,20,124686,0,none
-tensorflow,Data Analyst,24,120647,3,Niche or weakly valued
-cassandra,Data Analyst,11,118407,5,"Uncommon, valued (ML and ancillary languages/packages)"
-atlassian,Data Analyst,15,117966,5,"Uncommon, valued (ML and ancillary languages/packages)"
-airflow,Data Analyst,71,116387,3,Niche or weakly valued
-scala,Data Analyst,59,115480,3,Niche or weakly valued
-linux,Data Analyst,58,114883,3,Niche or weakly valued
-confluence,Data Analyst,62,114153,3,Niche or weakly valued
-pyspark,Data Analyst,49,114058,3,Niche or weakly valued
-mongodb,Data Analyst,52,113608,3,Niche or weakly valued
-gcp,Data Analyst,78,113065,3,Niche or weakly valued
-spark,Data Analyst,187,113002,3,Niche or weakly valued
-splunk,Data Analyst,15,112928,5,"Uncommon, valued (ML and ancillary languages/packages)"
-databricks,Data Analyst,102,112881,3,Niche or weakly valued
-git,Data Analyst,74,112250,3,Niche or weakly valued
-snowflake,Data Analyst,241,111578,2,"Required, fundamental"
-shell,Data Analyst,44,111496,3,Niche or weakly valued
-unix,Data Analyst,37,111123,3,Niche or weakly valued
-hadoop,Data Analyst,140,110888,3,Niche or weakly valued
-pandas,Data Analyst,90,110767,3,Niche or weakly valued
-phoenix,Data Analyst,23,109259,3,Niche or weakly valued
-php,Data Analyst,29,109052,3,Niche or weakly valued
-neo4j,Data Analyst,12,108646,5,"Uncommon, valued (ML and ancillary languages/packages)"
-nosql,Data Analyst,108,108331,3,Niche or weakly valued
-express,Data Analyst,96,108221,3,Niche or weakly valued
-redshift,Data Analyst,90,107969,3,Niche or weakly valued
-jira,Data Analyst,145,107931,3,Niche or weakly valued
-elasticsearch,Data Analyst,12,107816,5,"Uncommon, valued (ML and ancillary languages/packages)"
-numpy,Data Analyst,54,107398,3,Niche or weakly valued
-db2,Data Analyst,38,107130,3,Niche or weakly valued
-postgresql,Data Analyst,44,106853,3,Niche or weakly valued
-plotly,Data Analyst,25,106603,3,Niche or weakly valued
-aws,Data Analyst,291,106440,2,"Required, fundamental"
-c++,Data Analyst,68,105696,3,Niche or weakly valued
-alteryx,Data Analyst,124,105580,3,Niche or weakly valued
-azure,Data Analyst,319,105400,2,"Required, fundamental"
-gdpr,Data Analyst,33,105329,3,Niche or weakly valued
-bigquery,Data Analyst,84,105238,3,Niche or weakly valued
-bash,Data Analyst,19,105075,5,"Uncommon, valued (ML and ancillary languages/packages)"
-powershell,Data Analyst,32,105041,3,Niche or weakly valued
-scikit-learn,Data Analyst,26,103932,3,Niche or weakly valued
-looker,Data Analyst,260,103855,2,"Required, fundamental"
-jupyter,Data Analyst,37,103522,3,Niche or weakly valued
-kubernetes,Data Analyst,26,103089,3,Niche or weakly valued
-angular,Data Analyst,12,102103,5,"Uncommon, valued (ML and ancillary languages/packages)"
-python,Data Analyst,1840,101512,1,"Required, valued (essential languages/interfaces)"
-github,Data Analyst,59,101498,3,Niche or weakly valued
-jenkins,Data Analyst,21,101419,3,Niche or weakly valued
-mysql,Data Analyst,71,101381,3,Niche or weakly valued
-visio,Data Analyst,99,101036,3,Niche or weakly valued
-oracle,Data Analyst,332,100964,2,"Required, fundamental"
-qlik,Data Analyst,100,100933,3,Niche or weakly valued
-java,Data Analyst,135,100214,3,Niche or weakly valued
-matlab,Data Analyst,89,99909,3,Niche or weakly valued
-dax,Data Analyst,75,99549,3,Niche or weakly valued
-matplotlib,Data Analyst,31,99307,3,Niche or weakly valued
-docker,Data Analyst,28,99262,3,Niche or weakly valued
-seaborn,Data Analyst,12,98748,5,"Uncommon, valued (ML and ancillary languages/packages)"
-c,Data Analyst,89,98715,3,Niche or weakly valued
-r,Data Analyst,1073,98708,1,"Required, valued (essential languages/interfaces)"
-flow,Data Analyst,271,98020,2,"Required, fundamental"
-tableau,Data Analyst,1659,97978,1,"Required, valued (essential languages/interfaces)"
-spring,Data Analyst,22,97454,3,Niche or weakly valued
-go,Data Analyst,288,97267,2,"Required, fundamental"
-c#,Data Analyst,71,97248,3,Niche or weakly valued
-ssis,Data Analyst,102,97235,3,Niche or weakly valued
-sql,Data Analyst,3083,96435,1,"Required, valued (essential languages/interfaces)"
-sql server,Data Analyst,336,96191,2,"Required, fundamental"
-t-sql,Data Analyst,60,95723,3,Niche or weakly valued
-microstrategy,Data Analyst,39,94486,3,Niche or weakly valued
-vba,Data Analyst,185,93845,3,Niche or weakly valued
-sas,Data Analyst,1000,93707,1,"Required, valued (essential languages/interfaces)"
-sap,Data Analyst,183,92446,3,Niche or weakly valued
-power bi,Data Analyst,1044,92324,1,"Required, valued (essential languages/interfaces)"
-javascript,Data Analyst,153,91805,3,Niche or weakly valued
-ssrs,Data Analyst,129,91537,3,Niche or weakly valued
-cognos,Data Analyst,66,90407,3,Niche or weakly valued
-zoom,Data Analyst,19,89791,5,"Uncommon, valued (ML and ancillary languages/packages)"
-sharepoint,Data Analyst,174,89027,4,"Common, valued (cloud)"
-react,Data Analyst,16,88567,5,"Uncommon, valued (ML and ancillary languages/packages)"
-powerpoint,Data Analyst,524,88316,4,"Common, valued (cloud)"
-crystal,Data Analyst,76,87327,5,"Uncommon, valued (ML and ancillary languages/packages)"
-visual basic,Data Analyst,39,86972,5,"Uncommon, valued (ML and ancillary languages/packages)"
-windows,Data Analyst,80,86513,5,"Uncommon, valued (ML and ancillary languages/packages)"
-excel,Data Analyst,2143,86419,4,"Common, valued (cloud)"
-microsoft teams,Data Analyst,15,85570,5,"Uncommon, valued (ML and ancillary languages/packages)"
-assembly,Data Analyst,20,85390,5,"Uncommon, valued (ML and ancillary languages/packages)"
-css,Data Analyst,30,85317,5,"Uncommon, valued (ML and ancillary languages/packages)"
-spss,Data Analyst,212,85293,4,"Common, valued (cloud)"
-ms access,Data Analyst,65,84873,5,"Uncommon, valued (ML and ancillary languages/packages)"
-html,Data Analyst,55,84383,5,"Uncommon, valued (ML and ancillary languages/packages)"
-sheets,Data Analyst,155,84130,4,"Common, valued (cloud)"
-terminal,Data Analyst,46,83567,5,"Uncommon, valued (ML and ancillary languages/packages)"
-slack,Data Analyst,15,83442,5,"Uncommon, valued (ML and ancillary languages/packages)"
-word,Data Analyst,527,82941,4,"Common, valued (cloud)"
-ruby,Data Analyst,12,80960,5,"Uncommon, valued (ML and ancillary languages/packages)"
-outlook,Data Analyst,180,80680,4,"Common, valued (cloud)"
-spreadsheet,Data Analyst,100,78466,0,none
-planner,Data Analyst,15,77039,5,"Uncommon, valued (ML and ancillary languages/packages)"
-smartsheet,Data Analyst,24,71221,5,"Uncommon, valued (ML and ancillary languages/packages)"
+Groupings_manual,ChatGPT_label,ChatGPT_explanation,skills,job_title_short,count,avg_salary,manual_names
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",kafka,Data Analyst,40,129999,Niche or weakly valued
+0,Niche or Outdated Tools,"Likely less common, legacy, or narrowly used tools",pytorch,Data Analyst,20,125226,none
+0,Niche or Outdated Tools,"Likely less common, legacy, or narrowly used tools",perl,Data Analyst,20,124686,none
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",tensorflow,Data Analyst,24,120647,Niche or weakly valued
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",cassandra,Data Analyst,11,118407,"Uncommon, valued (ML and ancillary languages/packages)"
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",atlassian,Data Analyst,15,117966,"Uncommon, valued (ML and ancillary languages/packages)"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",airflow,Data Analyst,71,116387,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",scala,Data Analyst,59,115480,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",linux,Data Analyst,58,114883,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",confluence,Data Analyst,62,114153,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",pyspark,Data Analyst,49,114058,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",mongodb,Data Analyst,52,113608,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",gcp,Data Analyst,78,113065,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",spark,Data Analyst,187,113002,Niche or weakly valued
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",splunk,Data Analyst,15,112928,"Uncommon, valued (ML and ancillary languages/packages)"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",databricks,Data Analyst,102,112881,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",git,Data Analyst,74,112250,Niche or weakly valued
+2,Cloud & Data Warehouse Platforms,"Enterprise-scale data storage, cloud services, and query tools",snowflake,Data Analyst,241,111578,"Required, fundamental"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",shell,Data Analyst,44,111496,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",unix,Data Analyst,37,111123,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",hadoop,Data Analyst,140,110888,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",pandas,Data Analyst,90,110767,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",phoenix,Data Analyst,23,109259,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",php,Data Analyst,29,109052,Niche or weakly valued
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",neo4j,Data Analyst,12,108646,"Uncommon, valued (ML and ancillary languages/packages)"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",nosql,Data Analyst,108,108331,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",express,Data Analyst,96,108221,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",redshift,Data Analyst,90,107969,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",jira,Data Analyst,145,107931,Niche or weakly valued
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",elasticsearch,Data Analyst,12,107816,"Uncommon, valued (ML and ancillary languages/packages)"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",numpy,Data Analyst,54,107398,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",db2,Data Analyst,38,107130,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",postgresql,Data Analyst,44,106853,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",plotly,Data Analyst,25,106603,Niche or weakly valued
+2,Cloud & Data Warehouse Platforms,"Enterprise-scale data storage, cloud services, and query tools",aws,Data Analyst,291,106440,"Required, fundamental"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",c++,Data Analyst,68,105696,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",alteryx,Data Analyst,124,105580,Niche or weakly valued
+2,Cloud & Data Warehouse Platforms,"Enterprise-scale data storage, cloud services, and query tools",azure,Data Analyst,319,105400,"Required, fundamental"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",gdpr,Data Analyst,33,105329,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",bigquery,Data Analyst,84,105238,Niche or weakly valued
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",bash,Data Analyst,19,105075,"Uncommon, valued (ML and ancillary languages/packages)"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",powershell,Data Analyst,32,105041,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",scikit-learn,Data Analyst,26,103932,Niche or weakly valued
+2,Cloud & Data Warehouse Platforms,"Enterprise-scale data storage, cloud services, and query tools",looker,Data Analyst,260,103855,"Required, fundamental"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",jupyter,Data Analyst,37,103522,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",kubernetes,Data Analyst,26,103089,Niche or weakly valued
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",angular,Data Analyst,12,102103,"Uncommon, valued (ML and ancillary languages/packages)"
+1,Core Analytics & BI Tools,Essential data analysis languages and platforms,python,Data Analyst,1840,101512,"Required, valued (essential languages/interfaces)"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",github,Data Analyst,59,101498,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",jenkins,Data Analyst,21,101419,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",mysql,Data Analyst,71,101381,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",visio,Data Analyst,99,101036,Niche or weakly valued
+2,Cloud & Data Warehouse Platforms,"Enterprise-scale data storage, cloud services, and query tools",oracle,Data Analyst,332,100964,"Required, fundamental"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",qlik,Data Analyst,100,100933,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",java,Data Analyst,135,100214,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",matlab,Data Analyst,89,99909,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",dax,Data Analyst,75,99549,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",matplotlib,Data Analyst,31,99307,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",docker,Data Analyst,28,99262,Niche or weakly valued
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",seaborn,Data Analyst,12,98748,"Uncommon, valued (ML and ancillary languages/packages)"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",c,Data Analyst,89,98715,Niche or weakly valued
+1,Core Analytics & BI Tools,Essential data analysis languages and platforms,r,Data Analyst,1073,98708,"Required, valued (essential languages/interfaces)"
+2,Cloud & Data Warehouse Platforms,"Enterprise-scale data storage, cloud services, and query tools",flow,Data Analyst,271,98020,"Required, fundamental"
+1,Core Analytics & BI Tools,Essential data analysis languages and platforms,tableau,Data Analyst,1659,97978,"Required, valued (essential languages/interfaces)"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",spring,Data Analyst,22,97454,Niche or weakly valued
+2,Cloud & Data Warehouse Platforms,"Enterprise-scale data storage, cloud services, and query tools",go,Data Analyst,288,97267,"Required, fundamental"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",c#,Data Analyst,71,97248,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",ssis,Data Analyst,102,97235,Niche or weakly valued
+1,Core Analytics & BI Tools,Essential data analysis languages and platforms,sql,Data Analyst,3083,96435,"Required, valued (essential languages/interfaces)"
+2,Cloud & Data Warehouse Platforms,"Enterprise-scale data storage, cloud services, and query tools",sql server,Data Analyst,336,96191,"Required, fundamental"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",t-sql,Data Analyst,60,95723,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",microstrategy,Data Analyst,39,94486,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",vba,Data Analyst,185,93845,Niche or weakly valued
+1,Core Analytics & BI Tools,Essential data analysis languages and platforms,sas,Data Analyst,1000,93707,"Required, valued (essential languages/interfaces)"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",sap,Data Analyst,183,92446,Niche or weakly valued
+1,Core Analytics & BI Tools,Essential data analysis languages and platforms,power bi,Data Analyst,1044,92324,"Required, valued (essential languages/interfaces)"
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",javascript,Data Analyst,153,91805,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",ssrs,Data Analyst,129,91537,Niche or weakly valued
+3,Big Data & ML Engineering Stack,"Tools for data pipelines, ML, distributed computing",cognos,Data Analyst,66,90407,Niche or weakly valued
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",zoom,Data Analyst,19,89791,"Uncommon, valued (ML and ancillary languages/packages)"
+4,General Productivity & Legacy Stats Tools,Office tools and older statistical software,sharepoint,Data Analyst,174,89027,"Common, valued (cloud)"
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",react,Data Analyst,16,88567,"Uncommon, valued (ML and ancillary languages/packages)"
+4,General Productivity & Legacy Stats Tools,Office tools and older statistical software,powerpoint,Data Analyst,524,88316,"Common, valued (cloud)"
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",crystal,Data Analyst,76,87327,"Uncommon, valued (ML and ancillary languages/packages)"
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",visual basic,Data Analyst,39,86972,"Uncommon, valued (ML and ancillary languages/packages)"
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",windows,Data Analyst,80,86513,"Uncommon, valued (ML and ancillary languages/packages)"
+4,General Productivity & Legacy Stats Tools,Office tools and older statistical software,excel,Data Analyst,2143,86419,"Common, valued (cloud)"
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",microsoft teams,Data Analyst,15,85570,"Uncommon, valued (ML and ancillary languages/packages)"
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",assembly,Data Analyst,20,85390,"Uncommon, valued (ML and ancillary languages/packages)"
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",css,Data Analyst,30,85317,"Uncommon, valued (ML and ancillary languages/packages)"
+4,General Productivity & Legacy Stats Tools,Office tools and older statistical software,spss,Data Analyst,212,85293,"Common, valued (cloud)"
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",ms access,Data Analyst,65,84873,"Uncommon, valued (ML and ancillary languages/packages)"
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",html,Data Analyst,55,84383,"Uncommon, valued (ML and ancillary languages/packages)"
+4,General Productivity & Legacy Stats Tools,Office tools and older statistical software,sheets,Data Analyst,155,84130,"Common, valued (cloud)"
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",terminal,Data Analyst,46,83567,"Uncommon, valued (ML and ancillary languages/packages)"
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",slack,Data Analyst,15,83442,"Uncommon, valued (ML and ancillary languages/packages)"
+4,General Productivity & Legacy Stats Tools,Office tools and older statistical software,word,Data Analyst,527,82941,"Common, valued (cloud)"
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",ruby,Data Analyst,12,80960,"Uncommon, valued (ML and ancillary languages/packages)"
+4,General Productivity & Legacy Stats Tools,Office tools and older statistical software,outlook,Data Analyst,180,80680,"Common, valued (cloud)"
+0,Niche or Outdated Tools,"Likely less common, legacy, or narrowly used tools",spreadsheet,Data Analyst,100,78466,none
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",planner,Data Analyst,15,77039,"Uncommon, valued (ML and ancillary languages/packages)"
+5,Specialized DevOps & Visualization Frameworks,"Special-purpose tools for search, graph DBs, scripting, frontend, etc.",smartsheet,Data Analyst,24,71221,"Uncommon, valued (ML and ancillary languages/packages)"

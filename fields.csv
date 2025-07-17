@@ -1,0 +1,105 @@
+Industry,Function
+Technology / Software,User behavior analysis
+Technology / Software,Product usage analytics
+Technology / Software,A/B testing
+Technology / Software,Growth analytics
+Technology / Software,Bug tracking and resolution
+Finance & Banking,Risk analysis
+Finance & Banking,Fraud detection
+Finance & Banking,Credit scoring
+Finance & Banking,Portfolio performance analysis
+Finance & Banking,Customer segmentation
+Finance & Banking,Regulatory compliance
+Healthcare & Pharmaceuticals,Clinical trial data analysis
+Healthcare & Pharmaceuticals,Patient outcome tracking
+Healthcare & Pharmaceuticals,Hospital operations optimization
+Healthcare & Pharmaceuticals,Medical imaging analysis
+Healthcare & Pharmaceuticals,Drug efficacy and safety monitoring
+Retail & E-commerce,Sales performance analysis
+Retail & E-commerce,Customer segmentation
+Retail & E-commerce,Inventory management
+Retail & E-commerce,Demand forecasting
+Retail & E-commerce,Price optimization
+Retail & E-commerce,Customer lifetime value prediction
+Marketing & Advertising,Campaign performance tracking
+Marketing & Advertising,Market research
+Marketing & Advertising,Customer insights and profiling
+Marketing & Advertising,Social media analytics
+Marketing & Advertising,Ad spend optimization
+Marketing & Advertising,Lead scoring
+Telecommunications,Network optimization
+Telecommunications,Customer churn analysis
+Telecommunications,Usage pattern analysis
+Telecommunications,Service quality monitoring
+Telecommunications,Infrastructure planning
+Manufacturing,Quality control
+Manufacturing,Supply chain analytics
+Manufacturing,Predictive maintenance
+Manufacturing,Process optimization
+Manufacturing,Production scheduling
+Government & Public Sector,Policy impact analysis
+Government & Public Sector,Census data analysis
+Government & Public Sector,Crime statistics analysis
+Government & Public Sector,Urban planning
+Government & Public Sector,Public health monitoring
+Government & Public Sector,Budget allocation analysis
+Energy & Utilities,Consumption forecasting
+Energy & Utilities,Operational efficiency analysis
+Energy & Utilities,Fault detection and prediction
+Energy & Utilities,Renewable energy analytics
+Energy & Utilities,Grid management
+Transportation & Logistics,Route optimization
+Transportation & Logistics,Fleet management
+Transportation & Logistics,Demand prediction
+Transportation & Logistics,Traffic pattern analysis
+Transportation & Logistics,Supply chain logistics
+Education,Student performance analytics
+Education,Curriculum effectiveness evaluation
+Education,Enrollment trend analysis
+Education,Resource allocation
+Education,Retention and dropout prediction
+Media & Entertainment,Audience analytics
+Media & Entertainment,Content performance tracking
+Media & Entertainment,Recommendation systems
+Media & Entertainment,Social media trend analysis
+Media & Entertainment,Advertising effectiveness
+Sports & Athletics,Player performance analytics
+Sports & Athletics,Game strategy optimization
+Sports & Athletics,Injury prediction
+Sports & Athletics,Fan engagement analysis
+Sports & Athletics,Ticket sales forecasting
+Real Estate,Market trend analysis
+Real Estate,Property valuation modeling
+Real Estate,Customer behavior analysis
+Real Estate,Investment risk assessment
+Real Estate,Location analytics
+Insurance,Claims analysis
+Insurance,Risk assessment
+Insurance,Fraud detection
+Insurance,Customer segmentation
+Insurance,Policy pricing
+Travel & Hospitality,Booking trend analysis
+Travel & Hospitality,Customer experience analytics
+Travel & Hospitality,Revenue management
+Travel & Hospitality,Demand forecasting
+Travel & Hospitality,Competitor analysis
+Agriculture & Agritech,Crop yield prediction
+Agriculture & Agritech,Soil quality analysis
+Agriculture & Agritech,Supply chain optimization
+Agriculture & Agritech,Weather impact analysis
+Agriculture & Agritech,Farm equipment monitoring
+Environmental & Conservation,Climate data analysis
+Environmental & Conservation,Wildlife tracking
+Environmental & Conservation,Resource management
+Environmental & Conservation,Pollution monitoring
+Environmental & Conservation,Sustainability metrics
+Legal & Compliance,Document analysis
+Legal & Compliance,Case outcome prediction
+Legal & Compliance,Risk and compliance monitoring
+Legal & Compliance,E-discovery analytics
+Legal & Compliance,Contract management
+Automotive,Vehicle performance monitoring
+Automotive,Predictive maintenance
+Automotive,Consumer preference analysis
+Automotive,Supply chain analytics
+Automotive,Autonomous vehicle data analysis
