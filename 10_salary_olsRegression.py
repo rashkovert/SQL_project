@@ -1,4 +1,6 @@
 # %%
+
+# %%
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -9,21 +11,33 @@ from statsmodels.stats.multitest import multipletests
 
 # --- CONFIG ---
 SKILL_COUNT = 0
-MIN_COMPANIES = 3
+MIN_ROLES = 3
 CATEGORICAL_VARS = ["location"]
 TARGET_VAR = "salary"
 GROUP_VAR = "company"
 SAVE=True
 
+MIN_SHARE = 0.33
+
 def main():
     df, skills = make_df(SKILL_COUNT)
-    df = df[df["company"].groupby(df["company"]).transform("count") > MIN_COMPANIES]
-    df, _ = make_df_list(df, skills)
-    df, model = fit_ols_with_fixed_effects(df)
-    stats_df, results = compute_company_stats(df)
-    plot_significant_company_boxplots(df, stats_df)
+        
+    df_1 = df[df["company"].groupby(df["company"]).transform("count") >= MIN_ROLES]
+    df_1, _ = make_df_list(df_1, skills)
+    df_ols_1, model = fit_ols_with_fixed_effects(df_1)
+    stats_df_1, results = compute_company_stats(df_ols_1)
+    plot_significant_company_boxplots(df_ols_1, stats_df_1, use_residuals=True)
+    
+    if SAVE:
+        stats_df_1.to_csv('files/10_company_salaries_controlled.csv', index=False)
+
+    
+    df_2, _ = make_df_list(df, skills)
+    plot_top_company_barplots(df_2, use_residuals=True, top_share=MIN_SHARE)
     
     input("Press Enter to exit...")
+
+
 
 
 def make_df(skill_count):
@@ -86,15 +100,22 @@ def fit_ols_with_fixed_effects(df):
 
 
 def compute_company_stats(df, company_col='company', residual_col='residual', alpha=0.05):
+    from scipy.stats import ttest_1samp
+
     results = []
 
-    grouped = df[[company_col, residual_col]].dropna().groupby(company_col)[residual_col]
+    grouped = df[[company_col, residual_col, 'salary']].dropna().groupby(company_col)
 
-    for company, residuals in grouped:
+    for company, group in grouped:
+        residuals = group[residual_col]
+        salaries = group['salary']
+        
         mean_res = residuals.mean()
         t_stat, p_val = ttest_1samp(residuals, popmean=0, nan_policy='omit')
+        
         results.append({
             company_col: company,
+            'mean_salary': salaries.mean(),
             'mean_residual': mean_res,
             'p_value': p_val
         })
@@ -114,10 +135,21 @@ def plot_significant_company_boxplots(df, stats_df, company_col='company',
     
     filtered_df = df.merge(stats_df.query('significant'), on='company').sort_values('mean_residual')
     
-    val_col = residual_col if use_residuals else 'salary'  # assuming 'salary' column exists
+    if use_residuals:
+        val_col = residual_col
+        filtered_df = filtered_df.sort_values('mean_residual')
+    else:
+        val_col = 'salary'
+        filtered_df = filtered_df.sort_values('mean_salary')
     
-    plt.figure(figsize=(12, 6))
+    plt.figure(figsize=(8, 6))
     sns.boxplot(data=filtered_df, x=val_col, y=company_col, palette='vlag')
+    # sns.barplot(
+    #     data=filtered_df,
+    #     x=val_col,
+    #     y=company_col,
+    #     errorbar=('ci', 68)  # approx 1 SEM (68% confidence interval)
+    # )
     
     if use_residuals:
         plt.axvline(0, linestyle='--', color='black')
@@ -125,14 +157,82 @@ def plot_significant_company_boxplots(df, stats_df, company_col='company',
     else:
         plt.xlabel("Salary")
         
+    plt.yticks(fontsize=6)
     plt.ylabel("Company")
-    plt.title(f"Boxplots for BH-Significant Over- and Under-Paying Companies\n(Regressed on location)")
+    plt.title(f"BH-Significant Over- and Under-Paying Companies\n(Regressed on location, >{MIN_ROLES-1} postings)")
     plt.tight_layout()
     
     if SAVE:
-        plt.savefig("plots/10_outlierSalaryingCompanies.pdf", bbox_inches='tight')
+        plt.savefig("plots/10_SignificantSalaryingCompanies.pdf", bbox_inches='tight')
         
-    plt.show()
+    plt.show(block=False)
+
+def plot_top_company_barplots(df, top_share=0.5,
+                              company_col='company', residual_col='residual',
+                              use_residuals=False):
+    
+    top_companies = (
+        df[company_col]
+        .value_counts()
+        .reset_index(name='count')
+        .rename(columns={'index': 'company'})
+        .assign(cumulative=lambda x: x['count'].cumsum() / x['count'].sum())
+        .query('cumulative <= @top_share')['company']
+    )
+
+    filtered_df = df[df[company_col].isin(top_companies)]
+    
+    filtered_df, _ = fit_ols_with_fixed_effects(filtered_df)
+    stats_df, _ = compute_company_stats(filtered_df)
+
+    filtered_df = filtered_df.merge(stats_df.reset_index(), on='company', how='left')
+    filtered_df['significant'] = filtered_df['significant'].fillna(False)
+
+    if use_residuals:
+        val_col = residual_col
+        filtered_df = filtered_df.sort_values('mean_residual')
+    else:
+        val_col = 'salary'
+        filtered_df = filtered_df.sort_values('mean_salary')
+    
+
+    plt.figure(figsize=(10, top_share*25))
+    
+    # sns.boxplot(
+    #     data=,
+    #     x=val_col, 
+    #     y=company_col, 
+    #     palette='vlag',
+    #     hue='significant'
+    # )
+    
+    sns.barplot(
+        data=filtered_df,
+        x=val_col,
+        y=company_col,
+        errorbar=('ci', 68),  # approx 1 SEM (68% confidence interval)
+        hue='significant'
+    )
+
+
+    if use_residuals:
+        plt.axvline(0, linestyle='--', color='black')
+        plt.xlabel("Salary Residual (Actual - Expected)")
+    else:
+        plt.xlabel("Salary")
+
+    plt.ylabel("Company")
+    plt.title(f"Over- and Under-Paying Companies in Top {int(top_share * 100)}% of Postings (Regressed on location)")
+    plt.legend(title="BH-Significant", loc='lower right')
+    plt.yticks(fontsize=4)
+    plt.tight_layout()
+
+    if SAVE:
+        plt.savefig("plots/10_TopSalaryingCompanies.pdf", bbox_inches='tight')
+
+    plt.show(block=False)
+
+    
 
 if __name__ == "__main__":
     main()

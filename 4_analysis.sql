@@ -203,6 +203,32 @@ HAVING COUNT(*) > 10
 ORDER BY avg_salary DESC;
 
 
+/*
+SAVING: jobSkills_full.csv
+*/
+
+SELECT 
+    skills_dim.skills,
+    job_title_short,
+    COUNT(*),
+    AVG(salary_year_avg)::INT AS avg_salary
+    --company_dim.name AS company_name
+FROM job_postings_fact
+INNER JOIN skills_job_dim ON skills_job_dim.job_id = job_postings_fact.job_id
+INNER JOIN skills_dim ON skills_dim.skill_id = skills_job_dim.skill_id
+WHERE 
+    job_title_short = 'Data Analyst' --AND
+    /*
+    job_location IN ('Boston, MA', 'Cambridge, MA', 
+                    'Waltham, MA', 'Lexington, MA', 
+                    'Worcester, MA', 'Somerville, MA', 
+                    'Watertown, MA') AND
+    */
+    --salary_year_avg IS NOT NULL
+GROUP BY skills, job_title_short
+--HAVING COUNT(*) > 10
+ORDER BY avg_salary DESC;
+
 
 
 

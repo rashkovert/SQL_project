@@ -9,12 +9,12 @@ from statsmodels.formula.api import mixedlm
 
 SAVE = True
 SKILL_COUNT = 0
+terms = {'excel', 'word', 'powerpoint'}
 
 def main():
     global df, df_tests, results_mixlm
     df, skills = make_df(skill_count=SKILL_COUNT)
     df_list, skills_list = make_df_list(df, skills)
-    terms = {'excel', 'word', 'powerpoint'}
     common_set_inclusive = valid_exclusion_groupings(skills_list, terms)
 
     df_tests = run_t_tests(df_list, common_set_inclusive, terms)

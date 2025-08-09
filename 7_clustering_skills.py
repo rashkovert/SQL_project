@@ -8,12 +8,14 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import DBSCAN
 from scipy.stats import f_oneway, ttest_1samp
+from scipy.cluster.hierarchy import linkage, leaves_list
 import pingouin as pg
 import joblib
 
 LOAD_CLUSTERS = True
 
 def main():
+    
     if not LOAD_CLUSTERS:
         print("Computing clusters for Data Analyst role...")
         df, umap_df, pca, pca_skill_order = compute_clusters(role='Data Analyst', skill_count=200, limit=0, N_PCs=12,  umap_n_neighbors=100, umap_min_dist=0.5, clst_min_samples=15, clst_eps=0.6, SAVE=True)
@@ -33,33 +35,38 @@ def main():
     skills = list(set(umap_df.columns).difference(not_skills))
     # sort skills by usage
     skills = list(umap_df[skills].mean().sort_values(ascending=False).index)
-    
-    #tune_clustering(umap_df)
-    #plot_pca_heatmap(pca, pca_skill_order, correlations)
-    loadings_df = pd.DataFrame(pca.components_.T, index=pca_skill_order['skills'])
-    # ^ PC1 exclusively (anti-)correlates with income (slightly PC3)
-    l_pc1 = loadings_df[0].reindex(loadings_df[0].abs().sort_values(ascending=False).index)
-    l_pc3 = loadings_df[2].reindex(loadings_df[2].abs().sort_values(ascending=False).index)
 
-    skills_salary = list(
-        pd.concat([-l_pc1[l_pc1.abs() > 0.2], l_pc3[l_pc3.abs() > 0.2]])
-        .sort_values(ascending=False)
-        .index)
+    #tune_clustering(umap_df)
+    plot_pca_heatmap(pca, pca_skill_order, correlations)
     
-    print(skills)
-    #plot_skills_hmap(df, skills)
-    
-    plot_skills_umap(umap_df, ['salary_year_avg']+skills_salary)
-    
-    plot_clusters(umap_df)
-    
-    plot_cluster_skills(umap_df, skills)
-    plot_salary_umap(umap_df, REMOVE_OUTLIERS=3)
-    
-    
-    plot_cluster_skills_box(umap_df, skills=skills, n_clusters=len(np.unique(umap_df['cluster'])), sort_by='salary_year_avg')
-    
-    plot_skills_anova(umap_df, skills)
+    if 0:
+        
+        loadings_df = pd.DataFrame(pca.components_.T, index=pca_skill_order['skills'])
+        # ^ PC1 exclusively (anti-)correlates with income (slightly PC3)
+        l_pc1 = loadings_df[0].reindex(loadings_df[0].abs().sort_values(ascending=False).index)
+        l_pc3 = loadings_df[2].reindex(loadings_df[2].abs().sort_values(ascending=False).index)
+
+        skills_salary = list(
+            pd.concat([-l_pc1[l_pc1.abs() > 0.2], l_pc3[l_pc3.abs() > 0.2]])
+            .sort_values(ascending=False)
+            .index)
+        
+        #plot_skills_hmap(df, skills)
+        
+        plot_skills_umap(umap_df, ['salary_year_avg']+skills_salary)
+        
+        plot_clusters(umap_df)
+        
+        plot_cluster_skills(umap_df, skills)
+        plot_salary_umap(umap_df, REMOVE_OUTLIERS=3)
+        
+        
+        plot_cluster_skills_box(umap_df, skills=skills, n_clusters=len(np.unique(umap_df['cluster'])), sort_by='salary_year_avg')
+        
+        plot_skills_anova(umap_df, skills)
+        
+        cluster_order = plot_umap_hmap(umap_df, skills)
+        print(cluster_order)
     
     input("Press Enter to exit...")
     
@@ -213,6 +220,62 @@ def plot_pca_heatmap(pca, pca_skill_order, correlations):
     ax_bar.tick_params(axis='x', rotation=45, labelsize=8)
 
     plt.show(block=False)
+
+
+def plot_pca_heatmap(pca, pca_skill_order, correlations):
+    
+    print(correlations)
+    
+    loadings_df = pd.DataFrame(pca.components_.T, index=pca_skill_order['skills'])
+    loadings_df.columns = ['PC' + str(int(col)+1) for col in loadings_df.columns]
+    loadings_df = loadings_df.pow(3)
+
+    g = sns.clustermap(loadings_df, cmap='seismic', center=0,
+                   cbar=False, figsize=(3, 6), col_cluster=False)
+    
+    g.figure.subplots_adjust(left=0.05, right=0.65, top=0.9, bottom=0.05)
+
+    # Move x-axis to top
+    g.ax_heatmap.xaxis.set_ticks_position('top')
+    g.ax_heatmap.xaxis.set_label_position('top')
+    
+    # Apply skill labels in the correct (clustered) row order
+    reordered = g.dendrogram_row.reordered_ind
+    g.ax_heatmap.set_yticks(np.arange(len(loadings_df))+0.5)
+    g.ax_heatmap.set_yticklabels(list(loadings_df.index[reordered]), rotation=0, va='center')
+    g.ax_heatmap.tick_params(axis='y', labelsize=9)
+    
+    g.ax_heatmap.tick_params(axis='x', labelsize=8, rotation=45)
+
+    # Hide dendrograms and colorbar
+    g.ax_row_dendrogram.set_visible(False)
+    g.ax_col_dendrogram.set_visible(False)
+    g.cax.set_visible(False)
+    
+    # Barplot on top (correlations)
+    ax_bar_top = g.figure.add_axes([0.15, 0.9, 0.52, 0.05])  # adjust as needed
+    ax_bar_top.bar(correlations.index, correlations.values, color='skyblue')
+    ax_bar_top.set_ylim(-1, 1)
+    ax_bar_top.set_title('PC Correlation with Salary', fontsize=8)
+    ax_bar_top.tick_params(axis='x', bottom=False, labelbottom=False)
+
+
+    # Barplot on bottom (variance explained)
+    ax_bar_2 = g.figure.add_axes([0.15, 0.8, 0.52, 0.05])  # tweak position/size as needed
+    ax_bar_2.tick_params(axis='x', bottom=False, labelbottom=False)
+
+    var_exp = pca.explained_variance_ratio_ * 100  # convert to percentage
+    pcs = ['PC' + str(i+1) for i in range(len(var_exp))]
+
+    ax_bar_2.bar(pcs, var_exp, color='lightgreen')
+    ax_bar_2.set_ylim(0, max(var_exp)*1.1)
+    ax_bar_2.set_title('PC Variance Explained (%)', fontsize=8)
+    ax_bar_2.tick_params(axis='x', rotation=45, labelsize=8)
+    
+    #ax_bar_2.set_ylabel('% Var', fontsize=7)
+    
+    plt.show(block=False)
+
 
 def plot_cluster_skills(umap_df, skills, div=None):
     skill_len = len(skills)
@@ -531,6 +594,114 @@ def compute_clusters(role='Data Analyst', skill_count = 200, limit = 0, N_PCs = 
         
     return df, umap_df, pca, pca_skill_order
     
+def plot_umap_hmap(df, skill_cols):
+    
+    df = (
+        df[['cluster', 'salary_year_avg', 'cluster_size'] + skill_cols]
+        .query('cluster != -1')
+        .groupby('cluster').mean().reset_index()
+    )
+
+    # Preprocess additional columns
+    df['salary'] = (df['salary_year_avg'] / 1000).round(0)  # in thousands
+    df['cluster size'] = df['cluster_size'].astype(int)
+
+    # Create matrix for clustering (only skills)
+    skill_data = df[skill_cols]
+    linkage_matrix = linkage(skill_data, method='ward')
+    reordered_idx = leaves_list(linkage_matrix)
+
+    # Reorder all data
+    df_ordered = df.iloc[reordered_idx].copy()
+    df_ordered.index = df_ordered['cluster']  # label rows with cluster names
+
+    # Combine heatmap data: skills + additional metrics
+    heatmap_data = pd.concat([
+        df_ordered[skill_cols],                        # white→blue
+        df_ordered[['salary', 'cluster size']]         # different color maps
+    ], axis=1)
+
+    # Set up color maps
+    cmap_skills = sns.light_palette("blue", as_cmap=True)
+    cmap_salary = sns.light_palette("orange", as_cmap=True)
+    cmap_size = sns.light_palette("green", as_cmap=True)
+
+    # Create a color map list matching each column
+    cmaps = [cmap_skills] * len(skill_cols) + [cmap_salary, cmap_size]
+
+    # Normalize each column separately
+    normed_data = heatmap_data.copy()
+    for col in heatmap_data.columns:
+        col_min = heatmap_data[col].min()
+        col_max = heatmap_data[col].max()
+        normed_data[col] = (heatmap_data[col] - col_min) / (col_max - col_min)
+
+    # Plotting
+    fig, ax = plt.subplots(figsize=(6, 6))
+    
+    # Draw the heatmap background with blank colors
+    sns.heatmap(
+        normed_data,
+        cmap=cmap_skills,  # placeholder, overridden below
+        yticklabels=True,
+        xticklabels=normed_data.columns,
+        cbar=False,
+        ax=ax
+    )
+
+    # Apply individual colormaps and overlay text where needed
+    for i, col in enumerate(normed_data.columns):
+        col_data = normed_data[col].values
+        for j, val in enumerate(col_data):
+            # Choose color map based on column
+            if i < len(skill_cols):
+                color = cmap_skills(val)
+            elif col == 'salary':
+                color = cmap_salary(val)
+            elif col == 'cluster size':
+                color = cmap_size(val)
+            
+            # Draw colored background cell
+            ax.add_patch(plt.Rectangle((i, j), 1, 1, fill=True, color=color, linewidth=0))
+            
+            # Add text for non-skill columns
+            if col == 'salary':
+                text_val = f"{df_ordered.iloc[j]['salary']:.0f}k"
+                ax.text(i + 0.5, j + 0.5, text_val, ha='center', va='center', fontsize=5, color='black')
+            elif col == 'cluster size':
+                text_val = str(int(df_ordered.iloc[j]['cluster size']))
+                ax.text(i + 0.5, j + 0.5, text_val, ha='center', va='center', fontsize=5, color='black')
+
+    # Draw faint dashed grid lines for readability
+    n_rows, n_cols = normed_data.shape
+
+    # Horizontal lines between rows
+    for i in range(1, n_rows):
+        ax.hlines(i, xmin=0, xmax=n_cols, colors='lightgray', linestyles='dashed', linewidth=0.5)
+
+    # Vertical lines between columns
+    for j in range(1, n_cols):
+        ax.vlines(j, ymin=0, ymax=n_rows, colors='lightgray', linestyles='dashed', linewidth=0.5)
+
+
+    # Add legends manually
+    from matplotlib.patches import Patch
+    legend_elements = [
+        Patch(facecolor=cmap_skills(1.0), label='Skill Frequency'),
+        Patch(facecolor=cmap_salary(1.0), label='Salary (k)'),
+        Patch(facecolor=cmap_size(1.0), label='Cluster Size')
+    ]
+    ax.legend(handles=legend_elements, bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+
+    # Label formatting
+    ax.set_yticklabels(df_ordered['cluster'], rotation=0, fontsize=8)
+    ax.set_xticklabels(heatmap_data.columns, rotation=45, fontsize=5, ha='center')
+    ax.set_title("Skill Clusterings: \nSkill frequencies, expected salary, and size", fontsize=12, loc='center')
+    plt.tight_layout()
+    plt.show(block=False)
+    
+    return df_ordered['cluster']
+
 
 if __name__ == "__main__":
     main()
