@@ -146,5 +146,6 @@ Overall, I found this project a fun exercise with results lending to tangible op
 **counts_per_MAjob.csv (MA)** lists average salary and count per job role among MA areas
 ![Variation in Mean Salary with Location, Boston Area](plots/5_barplot.png)
 
-skills_per_MAjob.csv (MA) lists (fractional) frequencies of each skill per job title
-jobSkills_long.csv lists count (>10) and average salary for each skill listed
+**skills_per_MAjob.csv (MA)** lists (fractional) frequencies of each skill per job title
+
+**jobSkills_long.csv** lists count (>10) and average salary for each skill listed
