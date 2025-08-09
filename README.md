@@ -125,7 +125,7 @@ For a more pragmatic approach reducing the burden of FDR correction, I, then, fo
 
 ## Final Thoughts
 
-One definition of Euler's number is the the limit of one over the likelihood of a Bernoulli trial's failure in all outcomes repeated as many times as it is unlikely (1/100 run 100-times) as trial number goes to infinity. So, one doesn't really get a sense of one's competativity for a 1/x job until they complete x applications, which is a very time-consuming way to determine one's competitivity. 
+One definition of Euler's number is the the limit of one over the likelihood of a Bernoulli trial's failure in all outcomes repeated as many times as it is unlikely (1/100 run 100-times) as trial number goes to infinity. So, one doesn't really get a sense of one's competativity for a 1/x role until they complete around x applications, which can be a very time-consuming way to determine one's competitivity. 
 
 Here, I developed a sense for my general competitivity given my skill-set – specifically that I do well meet the qualifications of most valuable roles, given the overlap between my skill-set and postings' co-associated set of software/language skills. 
 
